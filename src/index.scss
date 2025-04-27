@@ -1,0 +1,62 @@
+@import '~bootstrap/scss/bootstrap';
+@import 'colors.scss';
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.bg-black {
+  background-color: $black;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+.font-black {
+  color: $black;
+}
+
+.font-white {
+  color: $white;
+}
+
+.hover-bg-black {
+  &:hover {
+    background-color: $black;
+  }
+}
+
+.hover-bg-white {
+  &:hover {
+    background-color: $white;
+  }
+}
+
+.hover-font-black {
+  &:hover {
+    color: $black;
+  }
+}
+
+.hover-font-white {
+  &:hover {
+    color: $white;
+  }
+}
+
+.hover-font-gray {
+  &:hover {
+    color: $gray;
+  }
+}
