@@ -14,16 +14,16 @@
 ## Instrucciones para ejecutarlo ▶️
 
 1. Clonar el repositorio con Git:
-```
+```bash
 git clone https://github.com/EzeAGB/ToDoApp.git
 ```
 2. Configurar el proyecto con _npm_ :
-```
+```bash
 npm i
 -o-
 npm install
 ```
 3. Ejecutar el proyecto con:
-```
+```bash
 npm start
 ```
