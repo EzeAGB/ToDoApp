@@ -76,6 +76,4 @@ Esta debe ser utilizada, por medio del header, en cada petición al backend. La 
 
 Ejemplo con Postman:
 
-
-
-<img title="Example postman" src="docs/images/readme_postman_example.png" alt="Postman">
+<img title="Example postman" src="https://i.imgur.com/MfzTTc4.png" alt="Postman">
