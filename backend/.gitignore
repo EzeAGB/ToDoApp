@@ -1,0 +1,57 @@
+# Dependencias de Node
+node_modules/
+# Opcional: caché de npm
+.npm
+
+# Archivos de log
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Directorios de build o temporales
+dist/
+build/
+.temp/
+.tmp/
+
+# Archivos de entorno (pueden contener información sensible)
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+
+# Archivos creados por el OS (macOS)
+.DS_Store
+
+# Editor directories and files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Resultados de pruebas
+coverage/
+.nyc_output/
+
+# Thumbnails de Windows
+Thumbs.db
+
+# Archivos de yarn (si usas yarn en lugar de npm)
+yarn.lock
+
+# Archivos de paquetes bloqueados (generalmente se incluyen, pero si tienes una razón específica para ignorarlos)
+# package-lock.json
+# yarn.lock
+
+# Otros posibles archivos a ignorar dependiendo de tu proyecto
+# uploaded_files/ # Si subes archivos al servidor
+# *.sqlite # Bases de datos locales
