@@ -27,6 +27,7 @@
    ```bash
    cd ./frontend
    ```
+
 2. Configurar el proyecto con _npm_ :
    
    ```bash
@@ -34,6 +35,7 @@
    -o-
    npm install
    ```
+
 3. Ejecutar el proyecto con:
    
    ```bash
@@ -47,6 +49,7 @@
    ```bash
    cd ./backend
    ```
+
 2. Configurar el proyecto con _npm_ :
    
    ```bash
@@ -54,6 +57,7 @@
    -o-
    npm install
    ```
+
 3. Ejecutar el proyecto con:
    
    ```bash
@@ -72,4 +76,6 @@ Esta debe ser utilizada, por medio del header, en cada petición al backend. La 
 
 Ejemplo con Postman:
 
-![alt text](docs/images/readme_postman_example.png "Example Postman")
+
+
+<img title="Example postman" src="docs/images/readme_postman_example.png" alt="Postman">
