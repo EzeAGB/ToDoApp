@@ -15,52 +15,61 @@
 ## Instrucciones
 
 1. Clonar el repositorio con Git:
-```bash
-git clone https://github.com/EzeAGB/ToDoApp.git
-```
+   
+   ```bash
+   git clone https://github.com/EzeAGB/ToDoApp.git
+   ```
 
 ## Instrucciones para ejecutar el frontend ▶️
 
 1. Entrar a la carpeta del frontend. Ej.:
-```bash
-cd ./frontend
-```
+   
+   ```bash
+   cd ./frontend
+   ```
 2. Configurar el proyecto con _npm_ :
-```bash
-npm i
--o-
-npm install
-```
+   
+   ```bash
+   npm i
+   -o-
+   npm install
+   ```
 3. Ejecutar el proyecto con:
-```bash
-npm start
-```
+   
+   ```bash
+   npm start
+   ```
 
 ## Intrucciones para ejecutar el backend ▶️
 
 1. Entrar a la carpeta del backend. Ej.:
-```bash
-cd ./backend
-```
+   
+   ```bash
+   cd ./backend
+   ```
 2. Configurar el proyecto con _npm_ :
-```bash
-npm i
--o-
-npm install
-```
+   
+   ```bash
+   npm i
+   -o-
+   npm install
+   ```
 3. Ejecutar el proyecto con:
-```bash
-npm start
-```
+   
+   ```bash
+   npm start
+   ```
 
 ## Desarrollo 🏗️
 
 La API key por defecto es:
+
 ```bash
 123456
 ```
+
 Esta debe ser utilizada, por medio del header, en cada petición al backend. La llave del valor tiene que ser: "Authorization".
 
 Ejemplo con Postman:
 
-![alt text](./docs/images/readme_postman_example.png "Example Postman")
+![alt text](docs/images/readme_postman_example.png "Example Postman")
