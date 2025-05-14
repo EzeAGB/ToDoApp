@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-let tasks = [];
+let goals = [];
 
 /* GET users listing. */
 router.get('/getGoals', function(req, res, next) {
-    res.json(tasks);
+    res.json(goals);
 });
 
 router.post('/addGoal', function(req, res, next) {
@@ -13,19 +13,22 @@ router.post('/addGoal', function(req, res, next) {
     
     if (req.body && req.body.name && req.body.description && req.body.dueDate) {
         req.body.id = timestamp;
-        tasks.push(req.body);
+        goals.push(req.body);
+        res.json(goals);
     }
-    res.json(tasks);
+    else {
+        res.status(400).json({});
+    }
 });
 
 router.delete('/removeGoal/:id', function(req, res, next) {
     if (req.params && req.params.id) {
         const id = req.params.id;
-        tasks = tasks.filter(task => task.id != id);
-        res.json(tasks);
+        goals = goals.filter(task => task.id != id);
+        res.json(goals);
     }
     else {
-        res.json([]);
+        res.status(400).json({});
     }
 });
 
