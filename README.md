@@ -58,7 +58,17 @@
    npm install
    ```
 
-3. Ejecutar el proyecto con:
+3. Agregar un archivo _.env_ con el siguiente contenido:
+   
+   ```bash
+   DB_NAME='nombre de la base de datos'
+   DB_HOST='host de la base de datos'
+   DB_PORT= número de puerto
+   DB_USER='nombre de usuario'
+   DB_PASSWORD='contraseña del usuario'
+   ```
+
+4. Ejecutar el proyecto con:
    
    ```bash
    npm start
