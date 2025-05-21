@@ -5,11 +5,81 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const router = express.Router();
 var cors = require('cors');
+require('dotenv').config(); 
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var usersTasks = require('./routes/tasks');
 var usersGoals = require('./routes/goals');
+const mysql = require('mysql');
+
+var connection = mysql.createConnection({
+  host: process.env.DB_HOST,
+  port: Number(process.env.DB_PORT),
+  user: process.env.DB_USER,
+  database: process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+});
+connection.connect((err) => {
+  if (err) {
+    console.error('Error when connecting to DB: ' + err.message);
+    return;
+  }
+  else {
+    console.log('Connected to DB successfully with id ' + connection.threadId);
+  }
+});
+
+let queryCreateDB = 'CREATE DATABASE IF NOT EXISTS ' + process.env.DB_NAME;
+let queryCreateTableGoals = 'CREATE TABLE IF NOT EXISTS goals ( \
+  id int(11) NOT NULL auto_increment, \
+  name varchar(250) NOT NULL default \'\', \
+  description varchar(250) NOT NULL default \'\', \
+  dueDate varchar(250) NOT NULL default \'\', \
+  PRIMARY KEY (id) \
+  );';
+let queryCreateTableTasks = 'CREATE TABLE IF NOT EXISTS tasks ( \
+  id int(11) NOT NULL auto_increment, \
+  name varchar(250) NOT NULL default \'\', \
+  description varchar(250) NOT NULL default \'\', \
+  dueDate varchar(250) NOT NULL default \'\', \
+  PRIMARY KEY (id) \
+  );';
+
+connection.query(queryCreateDB, (err, results, fields) => {
+  if (err) {
+    console.error(err.message);
+    return;
+  }
+  else {
+    console.log(results);
+    return;
+  }
+});
+
+connection.query(queryCreateTableGoals, (err, results, fields) => {
+  if (err) {
+    console.error(err.message);
+    return;
+  }
+  else {
+    console.log(results);
+    return;
+  }
+});
+
+connection.query(queryCreateTableTasks, (err, results, fields) => {
+  if (err) {
+    console.error(err.message);
+    return;
+  }
+  else {
+    console.log(results);
+    return;
+  }
+});
+
+connection.end();
 
 var app = express();
 
