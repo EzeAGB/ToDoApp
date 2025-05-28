@@ -15,6 +15,14 @@ export const todoSlice = createSlice({
         addTodo: (state, action) => {
             console.log(action.payload);
             state.value.push(action.payload);
+            fetch ('http://localhost:3001/tasks/addTask', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': '123456',
+                },
+                body: JSON.stringify(action.payload)
+            }).catch(error => console.log(error));
         },
         initAddTodo: (state, action) => {
             console.log(action.payload);
@@ -22,7 +30,14 @@ export const todoSlice = createSlice({
         },
         removeTodo: (state, action) => {
             console.log(action.payload);
-            state.value = state.value.filter((todo) => todo.name !== action.payload);
+            state.value = state.value.filter((todo) => todo.name !== action.payload.name);
+            fetch ('http://localhost:3001/tasks/deleteTask/' + action.payload.key, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': '123456',
+                },
+            }).catch(error => console.log(error));
         }
     }
 });

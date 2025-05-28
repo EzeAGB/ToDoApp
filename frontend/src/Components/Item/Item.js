@@ -4,13 +4,21 @@ import './Item.scss';
 import { CardBody } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { removeTodo } from '../../Reducers/todoSlice';
+import { removeGoal } from '../../Reducers/goalsSlice';
+import { useSelector } from 'react-redux';
 
 function Item(props) {
   const dispatch = useDispatch();
+  const option = useSelector((state) => state.option.value);
 
   const removeItem = (e) => {
     e.preventDefault();
-    dispatch(removeTodo(props.name));
+    if (option === 'tasks') {
+      dispatch(removeTodo({name: props.name, key: props.key}));
+    }
+    else {
+      dispatch(removeGoal({name: props.name, key: props.key}));
+    }
   };
 
   return (

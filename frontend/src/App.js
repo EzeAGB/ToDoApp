@@ -9,10 +9,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { addTodo, initAddTodo } from './Reducers/todoSlice';
 import { selectTodos } from './Reducers/todoSlice';
+import { selectGoals } from './Reducers/goalsSlice';
 
 function App() {
   const dispatch = useDispatch();
   const todos = useSelector(selectTodos);
+  const goals = useSelector(selectGoals);
+  const option = useSelector((state) => state.option.value);
   
   const arr = [
     {
@@ -49,6 +52,12 @@ function App() {
             <Row>
               <div className='scrolling'>
                 {
+                  option === 'goals' ?
+                  goals.map((goal, index) => {
+                    return (
+                      <Item key={index} name={goal.name} description={goal.description} dueDate={goal.dueDate} />
+                    )
+                  }) :
                   todos.map((todo, index) => {
                     return (
                       <Item key={index} name={todo.name} description={todo.description} dueDate={todo.dueDate} />
